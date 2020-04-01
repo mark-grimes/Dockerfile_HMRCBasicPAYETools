@@ -9,7 +9,7 @@ unofficial.**
 
 ## TL;DR
 ```
-docker run --rm -d -v /some/directory/:/home/paye_user/HMRC payroll_image
+docker run --rm -d -v /some/directory/:/home/paye_user/HMRC markgrimes/payetools-rti
 ```
 Will run an ephemeral container that saves all data to `/some/directory/` on your host system. If
 you start the container again with that command it will read the previously saved data from that
