@@ -1,5 +1,7 @@
 FROM debian:buster-slim
 
+ARG PAYETOOLS_VERSION="20.2.20141.491"
+
 #
 # Install the required libraries for Basic PAYE Tools. This list is taken from the linux instructions
 # at https://www.gov.uk/government/publications/getting-basic-paye-tools-working-on-linux/getting-basic-paye-tools-working-on-linux
@@ -21,10 +23,10 @@ RUN dpkg --add-architecture i386 \
 RUN apt-get update \
     && apt-get install -y curl unzip \
     && cd /root/ \
-    && curl -LO https://www.gov.uk/government/uploads/uploaded/hmrc/payetools-rti-20.0.20083.454-linux.zip \
-    && unzip payetools-rti-20.0.20083.454-linux.zip \
-    && /root/payetools-rti-20.0.20083.454-linux --mode unattended \
-    && rm /root/payetools-rti-20.0.20083.454-linux /root/payetools-rti-20.0.20083.454-linux.zip \
+    && curl -LO https://www.gov.uk/government/uploads/uploaded/hmrc/payetools-rti-${PAYETOOLS_VERSION}-linux.zip \
+    && unzip payetools-rti-${PAYETOOLS_VERSION}-linux.zip \
+    && /root/payetools-rti-${PAYETOOLS_VERSION}-linux --mode unattended \
+    && rm /root/payetools-rti-${PAYETOOLS_VERSION}-linux /root/payetools-rti-${PAYETOOLS_VERSION}-linux.zip \
     && apt-get autoremove -y curl unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
