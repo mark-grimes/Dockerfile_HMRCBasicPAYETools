@@ -47,6 +47,9 @@ every time you start XQuartz.
 It's generally easier to just share the X11 socket directly into the container. When you start the
 container add `-e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix`.
 
+I've not tested this but I've been told that on Ubuntu 20.04 the application will launch but the window
+is empty. To fix this try setting the environment variable `QT_GRAPHICSSYSTEM=native`.
+
 ### Windows
 
 You need an X server, e.g. [Xming](http://www.straightrunning.com/XmingNotes/). I haven't connected
