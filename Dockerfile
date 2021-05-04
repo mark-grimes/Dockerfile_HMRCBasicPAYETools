@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-ARG PAYETOOLS_VERSION="21.0.21070.203"
+ARG PAYETOOLS_VERSION="21.1.21106.209"
 
 #
 # Install the required libraries for Basic PAYE Tools. This list is taken from the linux instructions
