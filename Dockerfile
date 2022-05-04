@@ -1,18 +1,17 @@
 FROM debian:buster-slim
 
-ARG PAYETOOLS_VERSION="21.1.21106.209"
+ARG PAYETOOLS_VERSION="22.0.22076.204"
 
 #
 # Install the required libraries for Basic PAYE Tools. This list is taken from the linux instructions
 # at https://www.gov.uk/government/publications/getting-basic-paye-tools-working-on-linux/getting-basic-paye-tools-working-on-linux
 #
-RUN dpkg --add-architecture i386 \
-    && apt-get update \
+RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y libcomerr2:i386 libfontconfig1:i386 libfreetype6:i386 \
-                          libgl1-mesa-glx:i386 libgssapi-krb5-2:i386 libk5crypto3:i386 libkrb5-3:i386 \
-                          libreadline5:i386 libsqlite3-0:i386 libstdc++6:i386 libx11-6:i386 \
-                          libxext6:i386 libxrender1:i386 zlib1g:i386 libxslt1.1:i386 libxml2:i386 \
+    && apt-get install -y glib-2.0 libcomerr2 libfontconfig1 libfreetype6 \
+                          libgl1-mesa-glx libgssapi-krb5-2 libk5crypto3 libkrb5-3 \
+                          libreadline5 libsqlite3-0 libstdc++6 libx11-6 \
+                          libxext6 libxrender1 libxt6 zlib1g libxslt1.1 libxml2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
