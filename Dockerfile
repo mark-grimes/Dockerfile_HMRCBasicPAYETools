@@ -1,6 +1,6 @@
 FROM debian:sid-slim
 
-ARG PAYETOOLS_VERSION="22.0.22076.204"
+ARG PAYETOOLS_VERSION="22.2.22292.290"
 
 #
 # Install the required libraries for Basic PAYE Tools. This list is taken from the linux instructions
