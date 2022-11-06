@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:sid-slim
 
 ARG PAYETOOLS_VERSION="22.0.22076.204"
 
@@ -10,7 +10,7 @@ RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y glib-2.0 libcomerr2 libfontconfig1 libfreetype6 \
                           libgl1-mesa-glx libgssapi-krb5-2 libk5crypto3 libkrb5-3 \
-                          libreadline5 libsqlite3-0 libstdc++6 libx11-6 \
+                          libreadline8 libsqlite3-0 libstdc++6 libx11-6 \
                           libxext6 libxrender1 libxt6 zlib1g libxslt1.1 libxml2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
