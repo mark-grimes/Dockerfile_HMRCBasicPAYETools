@@ -1,6 +1,6 @@
 FROM debian:sid-slim
 
-ARG PAYETOOLS_VERSION="23.0.23065.113"
+ARG PAYETOOLS_VERSION="23.1.23352.272"
 
 #
 # Install the required libraries for Basic PAYE Tools. This list is taken from the linux instructions
@@ -12,6 +12,7 @@ RUN apt-get update \
                           libgl1-mesa-glx libgssapi-krb5-2 libk5crypto3 libkrb5-3 \
                           libreadline8 libsqlite3-0 libstdc++6 libx11-6 \
                           libxext6 libxrender1 libxt6 zlib1g libxslt1.1 libxml2 \
+                          firefox \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
